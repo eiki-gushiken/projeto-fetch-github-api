@@ -7,6 +7,10 @@ const screen = {
                 <div class="data">
                     <h1>${user.name ?? "Não possui nome cadastrado 😭"}</h1>
                     <p>${user.bio ?? "Não possui bio cadastrada 😭"}</p>
+                    <br>
+                    <h4><i class="fas fa-users"></i> ${user.followers} Seguidores </h4>
+                    <h4><i class="fas fa-user"></i> ${user.following} Seguindo</h4>
+
                 </div>
             </div>`
 
@@ -18,6 +22,30 @@ const screen = {
             <div class="repositories section">
                 <h2>Repositórios</h2>
                 <ul>${repositoriesItens}</ul>
+            </div>`
+        }
+
+        let eventsItens = ''
+        user.events.forEach(event => {
+            if(event.type === "PushEvent"){
+                eventsItens += `
+                <li class="event-item">
+                    <h3><a href="https://github.com/${event.repo.name}" target="_blank">${event.repo.name}</a></h3>
+                    <p>- ${event.payload.commits[0].message}</p>
+                </li>`
+            }else if(event.type === "CreateEvent"){
+                eventsItens += `
+                <li class="event-item">
+                    <h3><a href="https://github.com/${event.repo.name}" target="_blank">${event.repo.name}</a></h3>
+                </li>`
+            }
+        })
+
+        if(eventsItens !== ''){
+            this.userProfile.innerHTML += `
+            <div class="events section">
+                <h2>Eventos</h2>
+                <ul class="event-list">${eventsItens}</ul>
             </div>`
         }
     },
