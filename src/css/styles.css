@@ -24,9 +24,12 @@ main {
   padding: 50px 0 0;      
 }
 
+.github-icon{
+  margin-bottom: 30px;
+}
+
 .devicon-github-original{
   font-size: 60px;
-  margin-bottom: 30px;
   color: #FFFFFF;
 }
 
