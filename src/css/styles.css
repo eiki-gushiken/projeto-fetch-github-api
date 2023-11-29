@@ -116,7 +116,7 @@ main {
 
 .container .profile-data .info h1 {
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 700;
 }
 
@@ -126,8 +126,15 @@ main {
   line-height: 23px;
 }
 
+.container .profile-data .info .followData {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
 .container .profile-data .info h4 {
-  margin-bottom: 10px;
+  font-size: 14px;
 }
 
 /* REPOSITORIES */
@@ -171,7 +178,7 @@ main {
   color: #fff;
 }
 
-.alert{
+.alert {
   color: red;
   font-size: 12px;
   align-self: flex-start;
@@ -179,7 +186,7 @@ main {
 }
 
 .hide {
-  opacity: 0;
+  display: none;
 }
 
 .events {
@@ -200,7 +207,7 @@ main {
 .event-item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 20px;
   margin-top: 10px;
 }
@@ -209,7 +216,7 @@ main {
   color: rgb(77, 77, 77);
 }
 
-.events h3 a{
+.events h3 a {
   font-weight: 700;
 }
 
@@ -236,6 +243,32 @@ main {
   .container header #btn-search {
     width: 100%;
   }
+
+  .container .profile-data .repositories ul li a {
+    margin: 10px;
+    width: 280px;
+  }
+
+  .container .profile-data .events {
+    font-size: 11px;
+    width: 90%;
+  }
+
+  .event-list {
+    margin-top: 0;
+  }
+
+  .event-item {
+    flex-direction: column;
+    margin-top: 0;
+    gap: 2px;
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+  }
+
+  .event-item:last-child {
+    border: 0;
+    }
 }
 
 @media (max-width: 425px) {
@@ -243,7 +276,7 @@ main {
     padding: 15% 0;
   }
 
-  .container .profile-data .info{
+  .container .profile-data .info {
     width: 65%;
   }
 
@@ -257,15 +290,7 @@ main {
     padding: 0;
   }
 
-  .container .profile-data .repositories ul {
-    flex-direction: column;
-  }
-
-  .container .profile-data .repositories ul li a {
-    margin: 10px;
-  }
-
-  .container .profile-data .events {
+  .alert {
     font-size: 11px;
   }
 }

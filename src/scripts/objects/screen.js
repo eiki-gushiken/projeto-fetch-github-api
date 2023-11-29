@@ -8,10 +8,11 @@ const screen = {
                 <img src="${user.avatarUrl}" alt="Foto do perfil de usuário">
                 <div class="data">
                     <h1>${user.name ?? "Não possui nome cadastrado 😭"}</h1>
+                    <div class="followData">
+                        <h4><i class="fas fa-users"></i> ${user.followers} Seguidores </h4>
+                        <h4><i class="fas fa-user"></i> ${user.following} Seguindo</h4>
+                    </div>
                     <p>${user.bio ?? "Não possui bio cadastrada 😭"}</p>
-                    <br>
-                    <h4><i class="fas fa-users"></i> ${user.followers} Seguidores </h4>
-                    <h4><i class="fas fa-user"></i> ${user.following} Seguindo</h4>
 
                 </div>
             </div>`
@@ -53,6 +54,7 @@ const screen = {
                 eventsItens += `
                 <li class="event-item">
                     <h3><a href="https://github.com/${event.repo.name}" target="_blank">${event.repo.name}</a></h3>
+                    <p>- Sem mensagem</p>
                 </li>`
             }
         })
