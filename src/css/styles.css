@@ -163,9 +163,6 @@ main {
 
 .events {
   background-color: rgb(231, 231, 231);
-}
-
-.events.section {
   padding: 30px 50px;
 }
 
@@ -225,6 +222,10 @@ main {
     padding: 15% 0;
   }
 
+  .container .profile-data .info{
+    width: 65%;
+  }
+
   .container .profile-data .info img {
     margin-bottom: 20px;
   }
@@ -233,5 +234,17 @@ main {
   .container .profile-data .info .data {
     width: 100%;
     padding: 0;
+  }
+
+  .container .profile-data .repositories ul {
+    flex-direction: column;
+  }
+
+  .container .profile-data .repositories ul li a {
+    margin: 10px;
+  }
+
+  .container .profile-data .events {
+    font-size: 11px;
   }
 }
