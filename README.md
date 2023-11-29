@@ -10,6 +10,7 @@ Feito com auxílio do curso DevQuest no módulo: Projeto mundo real com Fetch e 
 - O usuário deve preencher o campo do `input` para que possa pesquisar;
 - Caso o usuário pesquisado não exista ou não seja encontrado, aparecerá uma mensagem;
 - O usuário deve ser capaz de clicar nos repositórios do usuário pesquisado e ser levado ao devido repositório em uma nova aba de pesquisa.
+- O usuário pode clicar no ícone do GitHub para reiniciar a página
 
 ### Informações fornecidas
 
@@ -19,6 +20,8 @@ Ao pesquisar um usuário, aparecerão as seguintes informações:
 - Foto de perfil
 - Biografia
 - Uma lista com até 10 repositórios
+- Quantidade de Forks, Estrelas, Watcher e a principal linguagem de programação de cada repositório
+- Uma lista com até os últimos 10 eventos CreateEvent ou PushEvent e seus respectivos commits
 
 ## Linguagens utilizadas
 
