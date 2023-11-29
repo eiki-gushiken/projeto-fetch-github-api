@@ -1,6 +1,8 @@
+import { repository } from "./repositories.js"
+
 const screen = {
     userProfile: document.querySelector('.profile-data'),
-    renderUser(user){
+    renderUser(user) {
         this.userProfile.innerHTML =
             `<div class="info">
                 <img src="${user.avatarUrl}" alt="Foto do perfil de usuário">
@@ -15,9 +17,23 @@ const screen = {
             </div>`
 
         let repositoriesItens = ''
-        user.repositories.forEach(repo => repositoriesItens += `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`)
+        user.repositories.forEach(repo => {
+            repository.setRepositoryInfo(repo)
+            repositoriesItens += `
+            <li>
+                <a href="${repository.url}" target="_blank">
+                    <p>${repository.name}</p>
+                    <ul class="repository-info">
+                        <li>🍴${repository.forks}</li>
+                        <li>⭐${repository.stars}</li>
+                        <li>👀${repository.watchers}</li>
+                        <li>🧑‍💻${repository.language ?? "--"}</li>
+                    </ul>
+                </a>
+            </li>`
+        })
 
-        if(user.repositories.length > 0){
+        if (user.repositories.length > 0) {
             this.userProfile.innerHTML += `
             <div class="repositories section">
                 <h2>Repositórios</h2>
@@ -27,13 +43,13 @@ const screen = {
 
         let eventsItens = ''
         user.events.forEach(event => {
-            if(event.type === "PushEvent"){
+            if (event.type === "PushEvent") {
                 eventsItens += `
                 <li class="event-item">
                     <h3><a href="https://github.com/${event.repo.name}" target="_blank">${event.repo.name}</a></h3>
                     <p>- ${event.payload.commits[0].message}</p>
                 </li>`
-            }else if(event.type === "CreateEvent"){
+            } else if (event.type === "CreateEvent") {
                 eventsItens += `
                 <li class="event-item">
                     <h3><a href="https://github.com/${event.repo.name}" target="_blank">${event.repo.name}</a></h3>
@@ -41,7 +57,7 @@ const screen = {
             }
         })
 
-        if(eventsItens !== ''){
+        if (eventsItens !== '') {
             this.userProfile.innerHTML += `
             <div class="events section">
                 <h2>Eventos</h2>
@@ -49,7 +65,7 @@ const screen = {
             </div>`
         }
     },
-    renderNotFound(){
+    renderNotFound() {
         this.userProfile.innerHTML = "<h3>Usuário não encontrado</h3>"
     }
 }
