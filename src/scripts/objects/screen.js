@@ -66,7 +66,15 @@ const screen = {
         }
     },
     renderNotFound() {
-        this.userProfile.innerHTML = "<h3>Usuário não encontrado</h3>"
+        this.userProfile.innerHTML = "<h3>Usuário não encontrado 😔</h3>"
+    },
+
+    showRequireField(){
+        document.querySelector('.alert').classList.remove('hide')
+    },
+
+    unshowRequireField(){
+        document.querySelector('.alert').classList.add('hide')
     }
 }
 

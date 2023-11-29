@@ -111,7 +111,7 @@ main {
 .container .profile-data .info img {
   width: 50%;
   border-radius: 50%;
-  border: 10px solid hotpink;
+  border: 10px solid #6a5acd;
 }
 
 .container .profile-data .info h1 {
@@ -165,14 +165,21 @@ main {
 }
 
 .container .profile-data .repositories ul li a .repository-info li {
-  background-color: rgb(140, 91, 219);
+  background-color: #6a5acd;
   padding: 3px;
   border-radius: 3px;
   color: #fff;
 }
 
-.container .profile-data.hide {
-  display: none;
+.alert{
+  color: red;
+  font-size: 12px;
+  align-self: flex-start;
+  margin-left: 2px;
+}
+
+.hide {
+  opacity: 0;
 }
 
 .events {
