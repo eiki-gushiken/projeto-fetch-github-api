@@ -28,7 +28,7 @@ const screen = {
                         <li>🍴${repository.forks}</li>
                         <li>⭐${repository.stars}</li>
                         <li>👀${repository.watchers}</li>
-                        <li>🧑‍💻${repository.language ?? "--"}</li>
+                        <li>🧑‍💻${repository.language ?? "Sem linguagens"}</li>
                     </ul>
                 </a>
             </li>`
@@ -54,7 +54,7 @@ const screen = {
                 eventsItens += `
                 <li class="event-item">
                     <h3><a href="https://github.com/${event.repo.name}" target="_blank">${event.repo.name}</a></h3>
-                    <p>- Sem mensagem</p>
+                    <p>- Criado um ${event.payload.ref_type}</p>
                 </li>`
             }
         })
